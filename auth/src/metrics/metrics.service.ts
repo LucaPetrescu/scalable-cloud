@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 import {Injectable, OnModuleInit} from '@nestjs/common';
+=======
+import { Injectable, OnModuleInit } from '@nestjs/common';
+>>>>>>> da1977221a988bf861a2d045b11095b71d41e9b4
 import * as client from 'prom-client';
 import * as os from 'os';
 import axios from 'axios';
 
 @Injectable()
+<<<<<<< HEAD
 export class MetricsService implements OnModuleInit{
     private readonly httpRequestDurationMicroseconds: client.Histogram<string>;
     private readonly cpuUsageGauge: client.Gauge<string>;
@@ -101,3 +106,10 @@ export class MetricsService implements OnModuleInit{
         }, 60000); // Send metrics every 60 seconds
       }
 }
+=======
+export class MetricsService implements OnModuleInit {
+  private readonly cpuUsageGauge: client.Gauge<string>;
+  private readonly memoryUsageGauge: client.Gauge<string>;
+  private readonly httpRequestCounter: client.Counter<string>;
+}
+>>>>>>> da1977221a988bf861a2d045b11095b71d41e9b4
