@@ -7,7 +7,15 @@ import { MetricsModule } from './metrics/metrics.module';
 import { PassportModule } from '@nestjs/passport';
 import { ConfigModule } from '@nestjs/config';
 @Module({
-  imports: [MetricsModule, AuthModule, MongooseModule.forRoot('mongodb://localhost/nest'), PassportModule.register({ defaultStrategy: 'jwt' })],
+  imports: [
+    MetricsModule,
+    AuthModule,
+    MongooseModule.forRoot('mongodb://localhost/nest'),
+    PassportModule.register({ defaultStrategy: 'jwt' }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
